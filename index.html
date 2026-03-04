@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/src/main.js"></script>
+  <title>PF Windbnb Vanilla</title>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+  <!-- HEADER -->
+  <header class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+
+    <!-- Logo -->
+    <img src="/src/images/icons/logo-f7862584.svg" class="h-6" />
+
+    <!-- Search Bar -->
+    <div class="flex border rounded-2xl shadow-sm overflow-hidden">
+
+      <!-- Location -->
+      <button id="location-btn"
+              class="px-6 py-3 text-sm border-r text-gray-600 hover:bg-gray-100 transition">
+        Add location
+      </button>
+
+      <!-- Guests -->
+      <button id="guests-btn"
+              class="px-6 py-3 text-sm border-r text-gray-600 hover:bg-gray-100 transition">
+        Add guests
+      </button>
+
+      <!-- Search Icon Button -->
+      <button id="search-btn"
+              class="px-6 py-3 flex items-center justify-center bg-red-500 hover:bg-red-600 transition">
+        <img src="/src/images/icons/search.svg"
+             alt="search"
+             class="w-4 h-4 invert" />
+      </button>
+
+    </div>
+
+   
+  </header>
+
+
+  <!-- SEARCH PANEL (Dropdown Expandible) -->
+  <div id="search-panel"
+       class="hidden bg-white shadow-lg rounded-2xl max-w-6xl mx-auto p-8 mb-6 transition">
+
+    <!-- LOCATION SECTION -->
+    <div id="location-section" class="hidden">
+      <h3 class="font-semibold mb-4">Location</h3>
+      <div id="city-list" class="flex flex-col gap-2"></div>
+    </div>
+
+    <!-- GUESTS SECTION -->
+    <div id="guests-section" class="hidden">
+
+      <!-- Adults -->
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <p class="font-semibold">Adults</p>
+          <p class="text-sm text-gray-400">Ages 13 or above</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="adult-minus" class="border px-3 py-1 rounded">-</button>
+          <span id="adult-count">0</span>
+          <button id="adult-plus" class="border px-3 py-1 rounded">+</button>
+        </div>
+      </div>
+
+      <!-- Children -->
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="font-semibold">Children</p>
+          <p class="text-sm text-gray-400">Ages 2–12</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="child-minus" class="border px-3 py-1 rounded">-</button>
+          <span id="child-count">0</span>
+          <button id="child-plus" class="border px-3 py-1 rounded">+</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TITLE -->
+  <section class="max-w-6xl mx-auto px-6 mb-6">
+    <div class="flex justify-between items-center">
+      <h1 class="text-xl font-bold">Stays in Finland</h1>
+      <span id="stays-count" class="text-sm text-gray-500"></span>
+    </div>
+  </section>
+
+
+  <!-- CARDS CONTAINER -->
+  <main class="max-w-6xl mx-auto px-6 pb-10">
+    <div
+      id="stays-container"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </div>
+  </main>
+
+</body>
+</html>
